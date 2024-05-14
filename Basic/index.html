@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+    <script>
+
+      const OpeningCeremony = new Promise((response,reject)=>{
+  setTimeout(()=>{
+    let array= {red:0,blue:0,green:0,yellow:0}
+   response(array)
+ },1000);
+})
+
+const Race100M=(val)=>{
+ return new Promise((response,reject)=>{
+  var arr = [];
+while(arr.length < 4){
+    var r = Math.floor(Math.random() * 4 + 11) 
+    if(arr.indexOf(r) === -1) arr.push(r);
+}
+console.log(arr);
+let red=arr[0] 
+let blue=arr[1]
+let green=arr[2] 
+let yellow=arr[3] 
+
+  if (red<blue && red<green && red<yellow ) {
+     val.red=50;
+     console.log('Red Won 100M Race');
+    }
+    if (blue<red && blue<green && blue<yellow ) {
+      val.blue=50;
+      console.log('Blue Won 100M Race');
+    }
+    if (green<red && green<blue && green<yellow ) {
+      val.green=50;
+      console.log('Green Won 100M Race');
+    }
+    if (yellow<red && yellow<blue && yellow<green ) {
+      val.yellow=50;
+      console.log('Yellow Won 100M Race');
+  }
+
+  if (red > blue && red<green && red<yellow ) {
+     val.red=25;
+  }
+  if (red > green && red<blue && red<yellow ) {
+     val.green=25;
+  }
+  if (red > yellow && red<blue && red<green ) {
+     val.yellow=25;
+  }
+  if (blue >red && blue<green && blue<yellow ) {
+     val.blue=25;
+  }
+  if (blue > green && blue<red && blue<yellow ) {
+     val.blue=25;
+  }
+  if (blue > yellow && blue<green && blue<red ) {
+     val.blue=25;
+  }
+  if (green > red && green<blue && green<yellow ) {
+     val.green=25;
+  }
+  if (green > blue && green<red && green<yellow ) {
+     val.green=25;
+  }
+  if (green > yellow && green<blue && green<red ) {
+     val.green=25;
+  }
+  if (yellow > red && yellow < blue && yellow<green ) {
+     val.yellow=25;
+  }
+  if (yellow > blue && yellow < red && yellow<green ) {
+     val.yellow=25;
+  }
+  if (yellow > green && yellow < red && yellow<blue ) {
+     val.yellow=25;
+  }
+    
+    setTimeout(()=>{
+      response(val)
+    },3000);
+  })
+}
+
+const LongJump=(val)=>{
+ return new Promise((response,reject)=>{
+  var arr = [];
+while(arr.length < 4){
+    var r = Math.floor(Math.random() * 4) 
+    if(arr.indexOf(r) === -1) arr.push(r);
+}
+
+
+if (arr[0]===3) {
+val.red+=150
+console.log('Red Won Long jump');
+}
+else if(arr[1]===3){
+  val.blue+=150
+  console.log('Blue Won Long Jump');
+}
+else if(arr[2]===3){
+  val.green+=150
+  console.log('green Won Long jump');
+}
+ else {
+  val.yellow+=150
+  console.log('Yellow Won Long jump');
+}
+    setTimeout(()=>{
+      response(val)
+    },2000);
+  })
+} 
+const HighJump=(val)=>{
+ return new Promise((response,reject)=>{
+   let color= prompt('enter color')
+   console.log(color);
+   if (color=="red") {
+    val.red+=100
+    console.log("Red won Highjump");
+   }
+   else if (color==='blue') {
+    val.blue+=100
+    console.log("Blue won Highjump");
+
+  }
+   else if (color==='green') {
+    val.green+=100
+    console.log("Green won Highjump");
+
+  }
+   else if (color==='yellow') {
+    val.yellow+=100
+    console.log("Yellow won Highjump");
+
+  }
+  else if (color==='') {
+    console.log('Event was cancelled');
+   }
+   else{
+console.log('Event was cancelled');
+   }
+   setTimeout(()=>{
+      response(val)
+    },1000);
+  })
+} 
+const AwardCeremony=(val)=>{
+ return new Promise((response,reject)=>{
+  const {red,blue,green,yellow}=val;
+
+  if (red>blue && red>green && red>yellow ) {
+    
+    console.log(`Red came first with ${val.red} points.`);
+    if (blue>green && blue>yellow) {
+      console.log(`Blue came second with ${val.blue} points.`);
+    } 
+    if (green>blue && green>yellow) {
+      console.log(`Green came second with ${val.green} points.`);
+    }
+    if (yellow>blue && yellow>green) {
+      console.log(`Yellow came second with ${val.yellow} points.`);
+    }
+  }
+  if (blue>red && blue>green && blue>yellow ) {
+    
+     console.log(` Blue came first with ${val.blue} points.`);
+     if (red>green && red>yellow) {
+      console.log(`Red came second with ${val.red} points.`);
+    } 
+    if (green>red && green>yellow) {
+      console.log(`Green came second with ${val.green} points.`);
+    }
+    if (yellow>red && yellow>green) {
+      console.log(`Yellow came second with ${val.yellow} points.`);
+    }
+    }
+  if (green>red && green>blue && green>yellow ) {
+    
+     console.log(`Green came first with ${val.green} points.`);
+     if (red>blue && red>yellow) {
+      console.log(`Red came second with ${val.red} points.`);
+    } 
+    if (blue>red && blue>yellow) {
+      console.log(`Blue came second with ${val.blue} points.`);
+    }
+    if (yellow>red && yellow>blue) {
+      console.log(`Yellow came second with ${val.yellow} points.`);
+    }
+    }
+  if (yellow>red && yellow>blue && yellow>green ) {
+    
+     console.log(`Yellow came first with ${val.yellow} points.`);
+     if (red>blue && red>green) {
+      console.log(`Red came second with ${val.red} points.`);
+    } 
+    if (blue>red && blue>green) {
+      console.log(`Blue came second with ${val.blue} points.`);
+    }
+    if (green>red && green>blue) {
+      console.log(`Green came second with ${val.green} points.`);
+    }
+    }
+    
+  })
+} 
+
+OpeningCeremony.then((val)=>{
+  console.log('Let the games begin');
+  console.log(val)
+  return Race100M(val)
+}).then((val)=>{
+  console.log(val);
+  return LongJump(val)
+}).then((val)=>{
+  console.log(val);
+  return HighJump(val)
+}).then((val)=>{
+  console.log(val);
+  return AwardCeremony(val)
+})
+    </script>
+  </body>
+</html>
+
